@@ -3,4 +3,12 @@ GET http://localhost:3000/predator
 
 ###
 
+GET http://localhost:3000/mercurial
+
+###
+
+GET http://localhost:3000/puma
+
+###
+
 GET http://localhost:3000/all

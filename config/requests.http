@@ -16,3 +16,6 @@ GET http://localhost:3000/all
 ###
 
 GET http://localhost:3000/query_param?id=1
+
+###
+GET http://localhost:3000/segment/2

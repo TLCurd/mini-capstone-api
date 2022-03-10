@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get "/puma" => "products#puma"
 
   get "/query_param" => "products#any"
+  get "/segment/:id" => "products#any"
 end
    

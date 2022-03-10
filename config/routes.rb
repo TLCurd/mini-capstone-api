@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   get "/all" =>"products#all"
   get "/mercurial" => "products#mercurial"
   get "/puma" => "products#puma"
+
+  get "/query_param" => "products#any"
 end
-  
+   

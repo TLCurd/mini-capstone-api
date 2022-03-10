@@ -19,5 +19,11 @@ class ProductsController < ApplicationController
     product = Product.all.as_json
     render json: product
   end
+
+  def any
+    id = params[:id]
+    product = Product.find_by(id: id)
+    render json: product
+  end
 end
-  
+   

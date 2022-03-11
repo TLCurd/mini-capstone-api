@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   
-  get "/predator" => "products#predator"
-  get "/all" =>"products#all"
-  get "/mercurial" => "products#mercurial"
-  get "/puma" => "products#puma"
+  get "/products" => "products#index"
 
-  get "/query_param" => "products#any"
-  get "/segment/:id" => "products#any"
+  get "/products/:id" => "products#show"
+
+  post "/products" => "products#create"
+
 end
-   
+    

@@ -36,5 +36,19 @@ class ProductsController < ApplicationController
     product.save
     render json: product.as_json
   end
+
+  def update
+    # id = params[:id]
+    # product = Product.find_by(id: id)
+    # OR you can do: 
+    product = Product.find_by(id: params[:id])
+    product.update(
+      name: params[:input_name],
+      price: params[:input_price],
+      image_url: params[:input_image_url],
+      description: params[:input_description])
+
+      render json: product.as_json
+  end
 end
     

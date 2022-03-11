@@ -10,7 +10,7 @@ POST http://localhost:3000/products
 content-type: application/json
 
 {
-  "input_id" : 8,
+  "input_id" : 9,
   "input_name" : "Nike Mercurial Dream Speed 5 Vapor 14 Elite FG Soccer Cleat",
   "input_price" : 249.99,
   "input_image_url" : "https://www.imagehandler.net/preview/?istyle=0000&fmt=jpg&w=370&h=370&cmp=100&c=999&img=A1060206000&iset=0100&iindex=0088&retBlank=1x1&bg=f6f6f6",
@@ -28,3 +28,7 @@ Content-Type: application/json
   "input_image_url" : "https://www.imagehandler.net/preview/?istyle=0000&fmt=jpg&w=370&h=370&cmp=100&c=999&img=A1062102000&iset=0100&iindex=0088&retBlank=1x1&bg=f6f6f6",
   "input_description" : "Find your Creative Edge in this striking adidas Predator Edge Geometric Pack edition. Re-imagined with new features to support swerve, spin and grip, the Predator Edge continues adidas soccer's legacy of game-changing control cleats."
 }
+
+### 
+
+DELETE http://localhost:3000/products/9

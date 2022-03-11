@@ -38,17 +38,26 @@ class ProductsController < ApplicationController
   end
 
   def update
+  ## USING .update ##
     # id = params[:id]
     # product = Product.find_by(id: id)
     # OR you can do: 
+    # product = Product.find_by(id: params[:id])
+    # product.update(
+    #   name: params[:input_name],
+    #   price: params[:input_price],
+    #   image_url: params[:input_image_url],
+    #   description: params[:input_description])
+  ## USING individual values ##
     product = Product.find_by(id: params[:id])
-    product.update(
-      name: params[:input_name],
-      price: params[:input_price],
-      image_url: params[:input_image_url],
-      description: params[:input_description])
+    product.name = params[:input_name]
+    product.price = params[:input_price]
+    product.image_url = params[:input_image_url]
+    product.description = params[:input_description]
 
-      render json: product.as_json
+    product.save
+
+    render json: product.as_json
   end
 end
     

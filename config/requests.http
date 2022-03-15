@@ -2,7 +2,7 @@ GET http://localhost:3000/products
 
 ###
 
-GET http://localhost:3000/products/3
+GET http://localhost:3000/products/4
 
 ###
 
@@ -10,11 +10,11 @@ POST http://localhost:3000/products
 content-type: application/json
 
 {
-  "input_id" : 9,
-  "input_name" : "Nike Mercurial Dream Speed 5 Vapor 14 Elite FG Soccer Cleat",
-  "input_price" : 249.99,
-  "input_image_url" : "https://www.imagehandler.net/preview/?istyle=0000&fmt=jpg&w=370&h=370&cmp=100&c=999&img=A1060206000&iset=0100&iindex=0088&retBlank=1x1&bg=f6f6f6",
-  "input_description" : "MDS Mindset. The Nike Mercurial Dream Speed 5 is inspired by Cristiano Ronaldo's most powerful tool - the mind. The cleat's design slowly transitions from tranquil green into commanding hues of turquoise and purple, illustrating how a calm mental state empowers Cristiano (and his carefully selected squad of elite MDS players) to seize the initiative through strong decision making and bold, purposeful play."
+  "choice_id" : 9,
+  "choice_name" : "Nike Mercurial Dream Speed 5 Vapor 14 Elite FG Soccer Cleat",
+  "choice_price" : 249.99,
+  "choice_image_url" : "https://www.imagehandler.net/preview/?istyle=0000&fmt=jpg&w=370&h=370&cmp=100&c=999&img=A1060206000&iset=0100&iindex=0088&retBlank=1x1&bg=f6f6f6",
+  "choice_description" : "MDS Mindset. The Nike Mercurial Dream Speed 5 is inspired by Cristiano Ronaldo's most powerful tool - the mind. The cleat's design slowly transitions from tranquil green into commanding hues of turquoise and purple, illustrating how a calm mental state empowers Cristiano (and his carefully selected squad of elite MDS players) to seize the initiative through strong decision making and bold, purposeful play."
 }
 
 ###
@@ -23,10 +23,10 @@ PATCH http://localhost:3000/products/8
 Content-Type: application/json
 
 {
-  "input_name" : "adidas Predator Edge+ Geometric FG Firm Ground Soccer Cleat",
-  "input_price" : 279.99,
-  "input_image_url" : "https://www.imagehandler.net/preview/?istyle=0000&fmt=jpg&w=370&h=370&cmp=100&c=999&img=A1062102000&iset=0100&iindex=0088&retBlank=1x1&bg=f6f6f6",
-  "input_description" : "Find your Creative Edge in this striking adidas Predator Edge Geometric Pack edition. Re-imagined with new features to support swerve, spin and grip, the Predator Edge continues adidas soccer's legacy of game-changing control cleats."
+  "choice_name" : "adidas Predator Edge+ Geometric FG Firm Ground Soccer Cleat",
+  "choice_price" : 279.99,
+  "choice_image_url" : "https://www.imagehandler.net/preview/?istyle=0000&fmt=jpg&w=370&h=370&cmp=100&c=999&img=A1062102000&iset=0100&iindex=0088&retBlank=1x1&bg=f6f6f6",
+  "choice_description" : "Find your Creative Edge in this striking adidas Predator Edge Geometric Pack edition. Re-imagined with new features to support swerve, spin and grip, the Predator Edge continues adidas soccer's legacy of game-changing control cleats."
 }
 
 ### 

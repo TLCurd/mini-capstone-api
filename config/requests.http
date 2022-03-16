@@ -1,16 +1,15 @@
-GET http://localhost:3000/products
+GET http://localhost:3000/products.json
 
 ###
 
-GET http://localhost:3000/products/4
+GET http://localhost:3000/products/4.json
 
 ###
 
-POST http://localhost:3000/products
+POST http://localhost:3000/products.json
 content-type: application/json
 
 {
-  "choice_id" : 9,
   "choice_name" : "Nike Mercurial Dream Speed 5 Vapor 14 Elite FG Soccer Cleat",
   "choice_price" : 249.99,
   "choice_image_url" : "https://www.imagehandler.net/preview/?istyle=0000&fmt=jpg&w=370&h=370&cmp=100&c=999&img=A1060206000&iset=0100&iindex=0088&retBlank=1x1&bg=f6f6f6",
@@ -19,14 +18,14 @@ content-type: application/json
 
 ###
 
-PATCH http://localhost:3000/products/8
+PATCH http://localhost:3000/products/20.json 
 Content-Type: application/json
 
 {
-  "choice_name" : "adidas Predator Edge+ Geometric FG Firm Ground Soccer Cleat",
-  "choice_price" : 279.99,
-  "choice_image_url" : "https://www.imagehandler.net/preview/?istyle=0000&fmt=jpg&w=370&h=370&cmp=100&c=999&img=A1062102000&iset=0100&iindex=0088&retBlank=1x1&bg=f6f6f6",
-  "choice_description" : "Find your Creative Edge in this striking adidas Predator Edge Geometric Pack edition. Re-imagined with new features to support swerve, spin and grip, the Predator Edge continues adidas soccer's legacy of game-changing control cleats."
+  "choice_name" : "Lotto Solista 100 IV Gravity SG Soft Ground Soccer Cleat",
+  "choice_price" : 199.99,
+  "choice_image_url" : "https://www.imagehandler.net/preview/?istyle=0000&fmt=jpg&w=370&h=370&cmp=100&c=999&img=A1062299000&iset=0100&iindex=0088&retBlank=1x1&bg=f6f6f6",
+  "choice_description" : "Fine-tuned for speed, the Lotto Solista 100 IV delivers a lightweight speed boot through a distraction-less laceless upper atop an outsole engineered to provide optimal traction and power transfer."
 }
 
 ### 

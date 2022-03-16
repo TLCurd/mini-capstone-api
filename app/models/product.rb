@@ -17,4 +17,20 @@ class Product < ApplicationRecord
     end
     # p tax
   end
+
+  def total
+    if price == nil || tax == nil
+      nil
+    else
+      total = price + tax
+    end
+  end
+
+  def better_updated_at
+    updated_at.strftime("%A, %d %b %Y %l:%M %p")
+  end
+
+  def better_created_at
+    created_at.strftime("%A, %d %b %Y %l:%M %p")
+  end
 end

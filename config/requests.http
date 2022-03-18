@@ -10,7 +10,6 @@ POST http://localhost:3000/products.json
 content-type: application/json
 
 {
-  "choice_name" : "Nike Mercurial Dream Speed 5 Vapor 14 Elite FG Soccer Cleat",
   "choice_price" : 249.99,
   "choice_image_url" : "https://www.imagehandler.net/preview/?istyle=0000&fmt=jpg&w=370&h=370&cmp=100&c=999&img=A1060206000&iset=0100&iindex=0088&retBlank=1x1&bg=f6f6f6",
   "choice_description" : "MDS Mindset. The Nike Mercurial Dream Speed 5 is inspired by Cristiano Ronaldo's most powerful tool - the mind. The cleat's design slowly transitions from tranquil green into commanding hues of turquoise and purple, illustrating how a calm mental state empowers Cristiano (and his carefully selected squad of elite MDS players) to seize the initiative through strong decision making and bold, purposeful play."

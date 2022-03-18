@@ -43,7 +43,9 @@ class Product < ApplicationRecord
     created_at.strftime("%A, %d %b %Y %l:%M %p")
   end
 
-  def supplier
-    Supplier.find_by(id: supplier_id)
-  end
+  # def supplier
+  #   Supplier.find_by(id: supplier_id)
+  # end
+  belongs_to :supplier
+  has_many :images
 end

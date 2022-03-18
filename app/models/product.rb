@@ -1,4 +1,13 @@
 class Product < ApplicationRecord
+  
+  validates :name, presence: true
+  validates :name, uniqueness: true
+  validates :price, presence: true
+  validates :price, numericality: { greater_than: 0}
+  validates :description, presence: true
+  validates :description, length: { in: 10..800}
+  
+  
   def is_discounted?
     if price == nil
       false
@@ -34,10 +43,7 @@ class Product < ApplicationRecord
     created_at.strftime("%A, %d %b %Y %l:%M %p")
   end
 
-  validates :name, presence: true
-  validates :name, uniqueness: true
-  validates :price, presence: true
-  validates :price, numericality: { greater_than: 0}
-  validates :description, presence: true
-  validates :description, length: { in: 10..800}
+  def supplier
+    Supplier.find_by(id: supplier_id)
+  end
 end

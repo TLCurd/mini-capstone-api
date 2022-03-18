@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   patch "/products/:id" => "products#update"
   # destroy a product
   delete "/products/:id" => "products#destroy"
+
+
+  # ALL suppliers
+  get "/suppliers" => "suppliers#index"
 end
     

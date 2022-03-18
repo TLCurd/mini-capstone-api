@@ -1,0 +1,5 @@
+@suppliers.map do |supplier|
+  {
+    id: supplier.id,
+  }
+end

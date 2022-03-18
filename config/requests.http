@@ -30,3 +30,6 @@ Content-Type: application/json
 ### 
 
 DELETE http://localhost:3000/products/9
+
+###
+GET http://localhost:3000/suppliers.json

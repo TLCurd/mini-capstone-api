@@ -10,21 +10,22 @@ POST http://localhost:3000/products.json
 content-type: application/json
 
 {
-  "choice_price" : 249.99,
-  "choice_image_url" : "https://www.imagehandler.net/preview/?istyle=0000&fmt=jpg&w=370&h=370&cmp=100&c=999&img=A1060206000&iset=0100&iindex=0088&retBlank=1x1&bg=f6f6f6",
-  "choice_description" : "MDS Mindset. The Nike Mercurial Dream Speed 5 is inspired by Cristiano Ronaldo's most powerful tool - the mind. The cleat's design slowly transitions from tranquil green into commanding hues of turquoise and purple, illustrating how a calm mental state empowers Cristiano (and his carefully selected squad of elite MDS players) to seize the initiative through strong decision making and bold, purposeful play."
+  "name" : "New Balance Furon v6+ Pro Wide FG Soccer Cleat",
+  "price" : 199.99,
+  "description" : "The Furon V6+ is re-engineered with the next generation of Fit Weave technology from New Balance in the Hypoknit upper. This provides a sock-like fit with great stability and a low profile knitted collar for a freedom of movement on the ball. A Hyposkin clear film is on top of the Hypoknit upper to prevent water uptake on those rainy and damp days.",
+  "supplier_id" : 5
 }
 
 ###
 
-PATCH http://localhost:3000/products/20.json 
-Content-Type: application/json
+PATCH http://localhost:3000/products/21.json
+content-type: application/json
 
 {
-  "choice_name" : "Lotto Solista 100 IV Gravity SG Soft Ground Soccer Cleat",
-  "choice_price" : 199.99,
-  "choice_image_url" : "https://www.imagehandler.net/preview/?istyle=0000&fmt=jpg&w=370&h=370&cmp=100&c=999&img=A1062299000&iset=0100&iindex=0088&retBlank=1x1&bg=f6f6f6",
-  "choice_description" : "Fine-tuned for speed, the Lotto Solista 100 IV delivers a lightweight speed boot through a distraction-less laceless upper atop an outsole engineered to provide optimal traction and power transfer."
+  "name": "New Balance Furon V6+ Pro FG Soccer Cleat: Sadio Mane The Lion Roars",
+  "price": 224.99,
+  "description": "Pure Instinct. Sadio Mane's new signature New Balance Furon 6+ cleats - The Lion Roars - are made for explosive power and skill that the Liverpool and Senegal star embodies, and feature eye-catching bespoke graphics. New Balance's next generation Fit Weave technology provides a sock-like fit with great stability and a low profile knitted collar for a freedom of movement on the ball. A Hyposkin clear film is on top of the Hypoknit upper to prevent water uptake on those rainy and damp days.",
+  "supplier_id": 5
 }
 
 ### 
@@ -33,3 +34,23 @@ DELETE http://localhost:3000/products/9
 
 ###
 GET http://localhost:3000/suppliers.json
+
+###
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "name": "Jurgen Klopp",
+  "email": "JKlopp@LFC.com",
+  "password": "YNWA",
+  "password_confirmation": "YNWA"
+}
+
+### Sessions create (login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "password"
+}

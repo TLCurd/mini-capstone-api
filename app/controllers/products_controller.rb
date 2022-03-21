@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
 
   def index
+    pp "current_user"
+    pp current_user
+    pp"/current_user"
     @products = Product.all 
     render template: "products/index"
     # render json: products.as_json(methods: [:is_discounted?, :tax, :total])
@@ -15,10 +18,9 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(
-    name: params[:choice_name],
-    price: params[:choice_price],
-    image_url: params[:choice_image_url], 
-    description: params[:choice_description])
+    name: params[:name],
+    price: params[:price],
+    description: params[:description], supplier_id: params[:supplier_id])
     
     if @product.save
       render template: "products/show"
@@ -28,22 +30,11 @@ class ProductsController < ApplicationController
   end
 
   def update
-  ## USING .update ##
-    # id = params[:id]
-    # product = Product.find_by(id: id)
-    # OR you can do: 
-    # product = Product.find_by(id: params[:id])
-    # product.update(
-    #   name: params[:choice_name],
-    #   price: params[:choice_price],
-    #   image_url: params[:choice_image_url],
-    #   description: params[:choice_description])
-  ## USING individual values ##
     @product = Product.find_by(id: params[:id])
-    @product.name = params[:choice_name]
-    @product.price = params[:choice_price]
-    @product.image_url = params[:choice_image_url]
-    @product.description = params[:choice_description]
+    @product.name = params[:name]
+    @product.price = params[:price]
+    @product.description = params[:description]
+    @product.supplier_id = params[:supplier_id]
 
     if @product.save
     render template: "products/show"
@@ -55,8 +46,6 @@ class ProductsController < ApplicationController
   def destroy
     product = Product.find_by(id: params[:id])
     product.delete
-    # products = Product.all  
-    # render json: products.as_json
     render json: {message: "The product has been removed"}
   end
 end

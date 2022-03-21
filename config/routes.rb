@@ -13,5 +13,11 @@ Rails.application.routes.draw do
 
   # ALL suppliers
   get "/suppliers" => "suppliers#index"
+
+  # user create
+  post "/users" => "users#create"
+
+  # sessions create
+  post "/sessions" => "sessions#create"
 end
     

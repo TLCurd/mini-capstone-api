@@ -51,25 +51,24 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
-  "password": "password"
+  "email": "JKlopp@LFC.com",
+  "password": "YNWA"
 }
 
 ### Orders create
 POST http://localhost:3000/orders.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDgwNTY2NDV9.vM5pHmwElmC4hSli0RZWHsltKAWK0vUsvTXNY-DESiQ
 Content-Type: application/json
 
 {
-  "user_id" : 1,
-  "product_id" : 4,
-  "quantity" : 1,
-  "subtotal" : 249.99,
-  "tax" : 19.99,
-  "total": 269.98
+  "product_id" : 7,
+  "quantity" : 1
 }
 
 ### Orders show
 GET http://localhost:3000/orders/3
 
+
 ### Orders index (show all)
 GET http://localhost:3000/orders.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDgwNTY2NDV9.vM5pHmwElmC4hSli0RZWHsltKAWK0vUsvTXNY-DESiQ

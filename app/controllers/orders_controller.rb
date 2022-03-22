@@ -1,12 +1,19 @@
 class OrdersController < ApplicationController
   def index
-    orders = Order.all
-    render json: orders.as_json
+    if current_user
+      orders = Order.where(user_id: current_user.id)
+      render json: orders.as_json
+    else
+      render json: {message: "You must be logged in to view your orders."}
+    end
   end
   
   
   def create
-    order = Order.new(user_id: params[:user_id], product_id: params[:product_id], quantity: params[:quantity], subtotal: params[:subtotal], tax: params[:tax], total: params[:total])
+    product = Product.find_by(id: params[:product_id])
+    tax = product.price * 0.08
+    total = product.price + tax
+    order = Order.new(user_id: current_user.id, product_id: params[:product_id], quantity: params[:quantity], subtotal: product.price, tax: tax, total: total)
     if order.save
       render json: order.as_json   
     else
@@ -15,7 +22,11 @@ class OrdersController < ApplicationController
   end
 
   def show
-    order = Order.find_by(id: params[:id])
-    render json: order.as_json  
+    if current_user
+      order = Order.find_by(id: params[:id])
+      render json: order.as_json  
+    else
+      render json: {message: "You must be logged in to view your orders."}
+    end
   end
 end

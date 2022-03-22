@@ -62,7 +62,7 @@ Content-Type: application/json
 
 {
   "product_id" : 7,
-  "quantity" : 1
+  "quantity" : 3
 }
 
 ### Orders show

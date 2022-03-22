@@ -1,4 +1,10 @@
 class OrdersController < ApplicationController
+  def index
+    orders = Order.all
+    render json: orders.as_json
+  end
+  
+  
   def create
     order = Order.new(user_id: params[:user_id], product_id: params[:product_id], quantity: params[:quantity], subtotal: params[:subtotal], tax: params[:tax], total: params[:total])
     if order.save
@@ -6,5 +12,10 @@ class OrdersController < ApplicationController
     else
       render json: { message: "This order was not created due to: #{order.errors.full_messages}."}
     end     
+  end
+
+  def show
+    order = Order.find_by(id: params[:id])
+    render json: order.as_json  
   end
 end

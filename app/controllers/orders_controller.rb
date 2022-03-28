@@ -11,21 +11,50 @@ class OrdersController < ApplicationController
   
   
   def create
-    if current_user
-      product = Product.find_by(id: params[:product_id])
-      tax = (product.price * params[:quantity].to_i) * 0.09
-      total = (product.price * params[:quantity].to_i) + tax
-      order = Order.new(user_id: current_user.id, product_id: params[:product_id], quantity: params[:quantity], subtotal: product.price * params[:quantity].to_i, tax: tax, total: total)
-      # could also use the tax and total methods from product class:
-      # order = Order.new(user_id: current_user.id, product_id: params[:product_id], quantity: params[:quantity], subtotal: product.price * params[:quantity], tax: product.tax * params[:quantity], total: product.total * params[:quantity])
-      if order.save
-        render json: order.as_json   
-      else
-        render json: { message: "This order was not created due to: #{order.errors.full_messages}."}
-      end
-    else
-      render json: { message: "You must be logged in to dot that."}, status: :unauthorized 
-    end    
+    # if current_user
+    #   products = CartedProduct.where(user_id: current_user.id, status: "carted")
+    #   p products
+    #   subtotal = 0
+    #   tax = 0
+    #   total = 0
+    #   products.each do |product|
+    #     prod = Product.find_by(id: product[:product_id])
+    #     subtotal += prod.price 
+    #     tax += prod.tax
+    #   end
+    #   total = subtotal + tax
+    #   order = Order.new(user_id: current_user.id, subtotal: subtotal, tax: tax, total: total)
+    #   if order.save
+    #     products.each do |product|
+    #       # prod = Product.find_by(id: product.product_id)
+    #       prod[:status] = "purchased"
+    #     end
+    #     render json: order.as_json   
+    #   else
+    #     render json: { message: "This order was not created due to: #{order.errors.full_messages}."}
+    #   end
+    # else
+    #   render json: { message: "You must be logged in to do that."}, status: :unauthorized 
+    # end    
+
+    carted_products = CartedProduct.where(user_id: current_user.id, status: "carted")
+    calculated_subtotal = 0
+    calculated_tax = 0
+    carted_products.each do |carted_product|
+      calculated_subtotal += carted_product.product.price * carted_product.quantity
+      calculated_tax += carted_product.product.price * 0.09
+    end
+    total = calculated_subtotal + calculated_tax
+    
+
+    order = Order.new(user_id: current_user.id, subtotal: calculated_subtotal, tax: calculated_tax, total: total)
+    order.save
+    carted_products.each do |carted_product|
+      carted_product.status = "purchased"
+      carted_product.order_id = order.id 
+      carted_product.save
+    end
+    render json: order.as_json
   end
 
   def show

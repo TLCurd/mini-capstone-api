@@ -1,0 +1,6 @@
+User needs to be able to view products
+User needs to be able to select products
+Shopping cart needs to exist to take products chosen
+User should be able to view the cart
+User needs to be able to remove products from cart
+Need to build order model also, containing subtotal, tax and total

@@ -1,3 +1,5 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NDgzMjI2MTB9.FCEiAajMGDdt3kPeMpwUdGAZbfie22-b__vVjOfbSuo
+
 GET http://localhost:3000/products.json
 
 ###
@@ -42,10 +44,10 @@ POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-  "name": "Jurgen Klopp",
-  "email": "JKlopp@LFC.com",
-  "password": "YNWA",
-  "password_confirmation": "YNWA"
+  "name": "Travis",
+  "email": "Travis@aol.com",
+  "password": "password",
+  "password_confirmation": "password"
 }
 
 ### Sessions create (login)
@@ -53,8 +55,8 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "JKlopp@LFC.com",
-  "password": "YNWA"
+  "email": "Travis@aol.com",
+  "password": "password"
 }
 
 ### Orders create
@@ -75,3 +77,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDgxNDI3N
 
 ### Orders index (show all)
 GET http://localhost:3000/orders.json
+
+### Create Cart
+POST http://localhost:3000/carted_products
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "product_id" : 22,
+  "quantity" : 4,
+  "status" : "carted",
+  "order_id" : 2
+}

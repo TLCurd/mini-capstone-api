@@ -12,10 +12,10 @@ Authorization: Bearer {{jwt}}
 content-type: application/json
 
 {
- "name": "New Balance Furon V6+ Pro FG Soccer Cleat: Sadio Mane The Lion Roars",
-  "price": 224.99,
-  "description": "Pure Instinct. Sadio Mane's new signature New Balance Furon 6+ cleats - The Lion Roars - are made for explosive power and skill that the Liverpool and Senegal star embodies, and feature eye-catching bespoke graphics. New Balance's next generation Fit Weave technology provides a sock-like fit with great stability and a low profile knitted collar for a freedom of movement on the ball. A Hyposkin clear film is on top of the Hypoknit upper to prevent water uptake on those rainy and damp days.",
-  "supplier_id": 5
+  "name" : "New Balance Furon v6+ Pro FG Soccer Cleat",
+  "price" : 199.99,
+  "description" : "The Furon V6+ is re-engineered with the next generation of Fit Weave technology from New Balance in the Hypoknit upper. This provides a sock-like fit with great stability and a low profile knitted collar for a freedom of movement on the ball. A Hyposkin clear film is on top of the Hypoknit upper to prevent water uptake on those rainy and damp days.",
+  "supplier_id" : 5
 }
 
 ###

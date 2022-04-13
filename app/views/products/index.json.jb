@@ -12,3 +12,19 @@
     supplier: product.supplier
   }
 end
+
+
+# @products.map do |product|
+#   {
+#     id: product.id,
+#     name: product.name,
+#     price: product.price,
+#     images: product.images,
+#     first_image: product.first_image,
+#     description: product.description,
+#     supplier_id: product.supplier_id,
+#     created_at: product.better_created_at,
+#     updated_at: product.better_updated_at,
+#     supplier: product.supplier
+#   }
+# end

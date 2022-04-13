@@ -50,6 +50,10 @@ class Product < ApplicationRecord
     created_at.strftime("%A, %d %b %Y %l:%M %p")
   end
 
+  def first_image    
+    first = images[0][:url]
+  end
+
   # def supplier
   #   Supplier.find_by(id: supplier_id)
   # end

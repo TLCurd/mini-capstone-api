@@ -39,4 +39,7 @@ export default {
 </template>
 
 <style>
+img {
+  width: 400px
+}
 </style>

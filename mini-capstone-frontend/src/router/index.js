@@ -4,6 +4,7 @@ import SignUp from '../views/SignUp.vue'
 import Login from '../views/LoginView.vue'
 import Logout from '../views/LogoutView.vue'
 import ProductsIndex from '../views/ProductsIndex.vue'
+import ProductsEdit from '../views/ProductsEdit.vue'
 
 const routes = [
   {
@@ -15,6 +16,11 @@ const routes = [
     path: '/products',
     name: 'products-index',
     component: ProductsIndex
+  },
+  {
+    path: '/products/:id/edit',
+    name: 'products-edit',
+    component: ProductsEdit
   },
   {
     path: '/about',
